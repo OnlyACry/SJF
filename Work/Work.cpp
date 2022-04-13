@@ -145,6 +145,7 @@ void ProcessRun(int n)
 					works[num - 1].State = "F";	//当前运行作业状态为结束 
 					works[num - 1].Complete = nowtime;	//记录当前作业的完成时间、周转时间
 					works[num - 1].AroundTime = nowtime - works[num - 1].ArriveTime;
+					works[num - 1].AveAroundTime = (1.0) * works[num - 1].AroundTime / works[num - 1].ServiceTime;
 				}
 				else
 				{
@@ -152,6 +153,7 @@ void ProcessRun(int n)
 					works[num].State = "F";	//当前运行作业状态为结束 
 					works[num].Complete = nowtime;	//记录当前作业的完成时间、周转时间
 					works[num].AroundTime = nowtime - works[num].ArriveTime;
+					works[num].AveAroundTime = (1.0) * works[num].AroundTime / works[num].ServiceTime;
 				}
 
 				DisplayWorkMassage(n);
